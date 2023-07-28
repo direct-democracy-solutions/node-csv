@@ -13,5 +13,5 @@ describe 'Samples', ->
   
   each samples, (sample) ->
     it "Sample #{sample}", (callback) ->
-      exec "node #{path.resolve dir, sample}", (err) ->
+      exec "node --trace-gc --inspect --max-old-space-size=100 #{path.resolve dir, sample}", (err) ->
         callback err
